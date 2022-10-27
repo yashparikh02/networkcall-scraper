@@ -5,10 +5,13 @@ This project pulls information from the network calls that have been sent out by
 
 
 Usage (either works):
+git clone (the URL for this repository)
+cd to that folder
+
 python networkcalls.py
 python3 networkcalls.py
 
-Dependencies: 
+Dependencies:
 python
 selenium
 selenium-wire
