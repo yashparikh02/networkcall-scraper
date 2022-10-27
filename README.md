@@ -3,6 +3,11 @@ selenium experimentation
 
 This project pulls information from the network calls that have been sent out by the user!
 
+
+Usage (either works):
+python networkcalls.py
+python3 networkcalls.py
+
 Dependencies: 
 python
 selenium
@@ -14,4 +19,4 @@ pip install selenium
 pip install selenium-wire
 pip install webdriver-manager
 
-Otherwise ask me for questions
+Otherwise ask me for questions!
