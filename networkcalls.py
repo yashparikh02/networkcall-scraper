@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from seleniumwire import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+import urllib.parse
 import time
 
 from selenium.webdriver.chrome.service import Service
@@ -21,16 +22,15 @@ for request in driver.requests:
     if request.response:
         if ('amplitude' in str(request.url)):
             list.append(request.url)
-            print(request)
+            # print(str(request.body).split('&'))
+            print(
+                request.url,
+            )
+            # print(request.response)
             # print("found an ampl" + str(request.url))
             # print(request.response)
-        # # print(
-        # #     request.url,
-        #     request.response
-        # #     # request.headers,
-        # #     # request.response.headers
-        # # )
-time.sleep(4)
+
+time.sleep(2)
 
 #  populate game ID
 ID_field = driver.find_element(By.NAME, 'gameId')
@@ -45,12 +45,13 @@ for request in driver.requests:
     if request.response:
         if ('amplitude' in str(request.url)):
             list.append(request.url)
-        print(
-            request.url,
-            # request.response.status_code,
-            # request.headers,
-            # request.response.headers
-        )
+            print("We noticed that amplitude is called at" + request.url)
+            if("api" in str(request.url)):
+                body = str(request.body).split('&')
+                information = body[2]
+                print("This is an api call that tracks information, AMPL is tracking: ")
+                print(urllib.parse.unquote(information))
+
 time.sleep(2)
 
 # print final output
