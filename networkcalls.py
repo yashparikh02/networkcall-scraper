@@ -12,8 +12,8 @@ driver = webdriver.Chrome(service=svc)
 driver.maximize_window()
 
 # final list all amplitude mentions
-list = []
-
+call_urls = []
+data_tracked = []
 # input URL
 driver.get("https:www.kahoot.it")
 
@@ -21,7 +21,8 @@ driver.get("https:www.kahoot.it")
 for request in driver.requests:
     if request.response:
         if ('amplitude' in str(request.url)):
-            list.append(request.url)
+            call_urls.append(request.url)
+            data_tracked.append('')
             # print(str(request.body).split('&'))
             print(
                 request.url,
@@ -44,16 +45,19 @@ button.click()
 for request in driver.requests:
     if request.response:
         if ('amplitude' in str(request.url)):
-            list.append(request.url)
-            print("We noticed that amplitude is called at" + request.url)
+            call_urls.append(request.url)
             if("api" in str(request.url)):
                 body = str(request.body).split('&')
-                information = body[2]
-                print("This is an api call that tracks information, AMPL is tracking: ")
-                print(urllib.parse.unquote(information))
+                information = urllib.parse.unquote(body[2])
+                print("This is an api call that tracks information, AMPL is tracking at" + request.url)
+                data_tracked.append(information)
+            else:
+                print("We noticed that amplitude is called at" + request.url)
+                data_tracked.append('')
 
 time.sleep(2)
 
 # print final output
 print("Here's my final amplitude list:")
-print(list)
+print(call_urls)
+print(data_tracked)
