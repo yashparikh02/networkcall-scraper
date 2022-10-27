@@ -16,10 +16,12 @@ python \
 selenium \
 selenium-wire \
 webdriver-manager
+urllib
 
 If you don't have any of them (assuming you have pip, if you don't have pip, install pip), run:
 pip install selenium \
 pip install selenium-wire \
-pip install webdriver-manager 
+pip install webdriver-manager
+pip install urllib
 
 Otherwise ask me for questions!
