@@ -1,7 +1,7 @@
 # networkcall-scraper
-selenium experimentation
+Team frequency:
 
-This project pulls information from the network calls that have been sent out by the user!
+This project pulls information from the network calls that have been sent out by the user, using kahoot as an example!
 
 
 Usage (either works): \
@@ -15,13 +15,11 @@ Dependencies:
 python \
 selenium \
 selenium-wire \
-webdriver-manager
+webdriver-manager \
 urllib
 
 If you don't have any of them (assuming you have pip, if you don't have pip, install pip), run:
 pip install selenium \
 pip install selenium-wire \
-pip install webdriver-manager
-pip install urllib
-
-Otherwise ask me for questions!
+pip install webdriver-manager \
+pip install urllib ]

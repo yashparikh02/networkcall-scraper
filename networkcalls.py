@@ -89,7 +89,6 @@ for i in data_tracked:
 
 # print final output
 print("Here are all the clickable elements on the website: " + str(clickables))
-
 print("Here's my final list of Amplitude calls and data tracked:")
 print("Here are all the url calls we make: " + str(call_urls))
 print("Here are all the data that we track (indices corresponding to the respective call url): " + str(data_tracked))
